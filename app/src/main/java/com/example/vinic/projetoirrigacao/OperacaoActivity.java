@@ -51,9 +51,9 @@ public class OperacaoActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 Valvula val= (Valvula) parent.getAdapter().getItem(position);
                 Toast.makeText(getApplicationContext(),val.getVal(),Toast.LENGTH_SHORT).show();
-                val.setVal("Novo Val");
-
-
+                EditarValvulaDialog dialog = new EditarValvulaDialog();
+                dialog.show(getFragmentManager(),"tag");
+                listView.invalidateViews();
             }
         });
 
