@@ -2,4 +2,200 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/val_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="47dp"
+        android:text="Válvula 1:" />
+
+    <TextView
+        android:id="@+id/val_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/val_1"
+        android:layout_below="@+id/val_1"
+        android:layout_marginTop="19dp"
+        android:text="Válvula 2:" />
+
+    <TextView
+        android:id="@+id/val_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/val_2"
+        android:layout_below="@+id/val_2"
+        android:layout_marginTop="11dp"
+        android:text="Válvula 3:" />
+
+    <TextView
+        android:id="@+id/val_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/val_3"
+        android:layout_below="@+id/val_3"
+        android:layout_marginTop="15dp"
+        android:text="Válvula 4:" />
+
+    <TextView
+        android:id="@+id/val_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/val_4"
+        android:layout_below="@+id/val_4"
+        android:layout_marginTop="16dp"
+        android:text="Válvula 5:" />
+
+    <TextView
+        android:id="@+id/val_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/val_5"
+        android:layout_alignTop="@+id/val_5"
+        android:layout_marginTop="26dp"
+        android:text="Válvula 6:" />
+
+    <TextView
+        android:id="@+id/val_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/val_6"
+        android:layout_below="@+id/val_6"
+        android:layout_marginTop="26dp"
+        android:text="Válvula 7:" />
+
+    <TextView
+        android:id="@+id/temp_irrig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="18dp"
+        android:text="Tempo de Irrigação"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/val_1" />
+
+    <TextView
+        android:id="@+id/intervalo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Intervalos"
+        android:layout_marginStart="26dp"
+        android:layout_alignBaseline="@+id/temp_irrig"
+        android:layout_alignBottom="@+id/temp_irrig"
+        android:layout_toEndOf="@+id/temp_irrig" />
+
+    <TextView
+        android:id="@+id/val_1_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/temp_irrig"
+        android:layout_alignTop="@+id/val_1"
+        android:layout_marginEnd="28dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/val_2_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/val_2"
+        android:layout_alignStart="@+id/val_1_t"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/val_3_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/val_2_t"
+        android:layout_alignTop="@+id/val_3"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/val_4_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/val_3_t"
+        android:layout_alignTop="@+id/val_4"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/val_5_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/val_4_t"
+        android:layout_alignTop="@+id/val_5"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/val_6_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/val_5_t"
+        android:layout_alignTop="@+id/val_6"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/val_7_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/val_6_t"
+        android:layout_alignTop="@+id/val_7"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/intervalo"
+        android:layout_alignTop="@+id/val_1_t"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView10"
+        android:layout_alignTop="@+id/val_2_t"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView11"
+        android:layout_alignTop="@+id/val_3_t"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView12"
+        android:layout_alignTop="@+id/val_4_t"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView13"
+        android:layout_alignTop="@+id/val_5_t"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView14"
+        android:layout_alignTop="@+id/val_6_t"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/val_7_t"
+        android:layout_alignStart="@+id/textView15"
+        android:text="TextView" />
 </RelativeLayout>

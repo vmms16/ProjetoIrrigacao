@@ -21,6 +21,8 @@ import java.util.UUID;
 
 public class PrincipalActivity extends AppCompatActivity {
 
+    ConexaoBluetooth conexaoBluetooth= ConexaoBluetooth.getInstance();
+
     private static final int SOLICITA_ATIVACAO =1;
     private static final int SOLICITA_CONEXAO =2;
     private static final int MESSAGE_READ=3;
@@ -47,13 +49,26 @@ public class PrincipalActivity extends AppCompatActivity {
         Button btnOperacao = (Button) findViewById(R.id.btn_operacao);
         Button btnClimatologia = (Button) findViewById(R.id.btn_climatologia);
 
-
+        /*
         if(mBluetoothAdapter==null){
             Toast.makeText(getApplicationContext(),"Seu aparelho não suporta Bluetooth", Toast.LENGTH_LONG).show();
             finish();
         }else if(!mBluetoothAdapter.isEnabled()){
             Intent intent= new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(intent, SOLICITA_ATIVACAO);
+            //mBluetoothAdapter.enable();
+            Toast.makeText(getApplicationContext(),"Bluetooth Ativado", Toast.LENGTH_LONG).show();
+        }*/
+
+        if(conexaoBluetooth.ativarBluetooth()){
+            Intent intent= new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(intent, SOLICITA_ATIVACAO);
+        }else{
+            if(!conexaoBluetooth.mBluetoothAdapter.isEnabled()){
+                Toast.makeText(getApplicationContext(),"Seu Bluetooth não esta disponivel", Toast.LENGTH_LONG).show();
+                finish();
+            }
+
         }
 
     }
@@ -104,6 +119,7 @@ public class PrincipalActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Bluetooth não pode ser ativado!", Toast.LENGTH_SHORT).show();
                     finish();
                 }
+                break;
 
             case SOLICITA_CONEXAO:
                 //Toast.makeText(getApplicationContext(),"Chegou aqui",Toast.LENGTH_LONG).show();
@@ -127,6 +143,7 @@ public class PrincipalActivity extends AppCompatActivity {
                     }
 
                 }
+                break;
         }
 
     }
