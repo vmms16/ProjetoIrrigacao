@@ -15,34 +15,15 @@ import java.util.ArrayList;
  */
 
 public class OperacaoActivity extends AppCompatActivity {
+    private Sessao sessao= Sessao.getInstance();
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_operacao);
 
-        Valvula v1= new Valvula();
-        Valvula v2= new Valvula();
 
-        v1.setVal("valvula 1");
-        v1.setPulsos(3);
-        v1.setTempo(2.5);
-
-        v2.setVal("valvula 2");
-        v2.setPulsos(5);
-        v2.setTempo(5);
-
-        ArrayList<Valvula> arrayList = new ArrayList<Valvula>();
-
-        arrayList.add(v1);
-        arrayList.add(v2);
-        arrayList.add(v1);
-        arrayList.add(v2);
-        arrayList.add(v1);
-        arrayList.add(v2);
-        arrayList.add(v1);
-        arrayList.add(v2);
-
-        final ValvulaAdapter valvulaAdapter= new ValvulaAdapter(this,arrayList);
+        final ValvulaAdapter valvulaAdapter= new ValvulaAdapter(this,sessao.getArrayValvulas());
 
         final ListView listView = (ListView) findViewById(R.id.list_adapter);
         listView.setAdapter(valvulaAdapter);
@@ -50,12 +31,19 @@ public class OperacaoActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 Valvula val= (Valvula) parent.getAdapter().getItem(position);
-                Toast.makeText(getApplicationContext(),val.getVal(),Toast.LENGTH_SHORT).show();
-                EditarValvulaDialog dialog = new EditarValvulaDialog();
-                dialog.show(getFragmentManager(),"tag");
+                //Toast.makeText(getApplicationContext(),val.getVal(),Toast.LENGTH_SHORT).show();
+                sessao.setValvula(val);
+                val.setPulsos(sessao.getValvula().getPulsos());
+                val.setTempo(sessao.getValvula().getTempo());
+                Intent intent= new Intent(getApplication(),EditarValvula.class);
+                startActivity(intent);
+
+                //Toast.makeText(getApplicationContext(),Integer.toString(arrayList.get(0).getPulsos()),Toast.LENGTH_SHORT).show();
                 listView.invalidateViews();
             }
         });
+
+
 
     }
 

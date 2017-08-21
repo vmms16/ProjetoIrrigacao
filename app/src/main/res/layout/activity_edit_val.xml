@@ -8,14 +8,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Tempo"
         android:inputType="textPersonName"
-        android:text="Tempo" />
+        />
 
     <EditText
         android:id="@+id/id_pulsos_d"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Pulsos"
         android:inputType="textPersonName"
-        android:text="Pulsos" />
+        />
 </LinearLayout>
