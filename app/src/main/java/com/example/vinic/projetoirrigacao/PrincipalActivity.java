@@ -48,7 +48,12 @@ public class PrincipalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
+
         this.carregarArquivo();
+
+        if(sessao.getArrayValvulas().size()==0){
+            sessao.iniciarConfValvulas();
+        }
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         final Button btnConectar = (Button) findViewById(R.id.btn_conectar);
@@ -186,8 +191,6 @@ public class PrincipalActivity extends AppCompatActivity {
 
                 inputStream.close();
 
-            }else{
-                sessao.iniciarConfValvulas();
             }
         }
         catch (FileNotFoundException e) {
