@@ -92,7 +92,7 @@ public class OperacaoActivity extends AppCompatActivity {
         catch (IOException e) {
             Log.e("Exception", "File write failed: " + e.toString());
         }
-
+        sessao.getArrayValvulas().clear();
         Intent intent= new Intent(getApplicationContext(),PrincipalActivity.class);
         startActivity(intent);
 
