@@ -22,6 +22,14 @@ public class OperacaoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_operacao);
 
+        /*ArrayList<Valvula> arrayList= new ArrayList<Valvula>();
+
+        Valvula v1= new  Valvula();
+        v1.setVal(1);
+        v1.setPulsos(2);
+        v1.setTempo(2);
+
+        arrayList.add(v1);*/
 
         final ValvulaAdapter valvulaAdapter= new ValvulaAdapter(this,sessao.getArrayValvulas());
 
@@ -31,10 +39,7 @@ public class OperacaoActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 Valvula val= (Valvula) parent.getAdapter().getItem(position);
-                //Toast.makeText(getApplicationContext(),val.getVal(),Toast.LENGTH_SHORT).show();
                 sessao.setValvula(val);
-                val.setPulsos(sessao.getValvula().getPulsos());
-                val.setTempo(sessao.getValvula().getTempo());
                 Intent intent= new Intent(getApplication(),EditarValvula.class);
                 startActivity(intent);
 

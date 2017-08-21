@@ -21,6 +21,7 @@ import java.util.UUID;
 
 public class PrincipalActivity extends AppCompatActivity {
 
+    Sessao sessao= Sessao.getInstance();
     ConexaoBluetooth conexaoBluetooth= ConexaoBluetooth.getInstance();
 
     private static final int SOLICITA_ATIVACAO =1;
@@ -42,7 +43,7 @@ public class PrincipalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
-
+        sessao.iniciarConfValvulas();
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         final Button btnConectar = (Button) findViewById(R.id.btn_conectar);

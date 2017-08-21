@@ -32,7 +32,7 @@ public class ValvulaAdapter extends ArrayAdapter {
         TextView val_tempo= (TextView) convertView.findViewById(R.id.id_tempo);
         TextView val_pulsos= (TextView) convertView.findViewById(R.id.id_pulsos);
 
-        val_nome.setText(valvula.getVal());
+        val_nome.setText(Integer.toString(valvula.getVal()));
         val_tempo.setText(Double.toString(valvula.getTempo()));
         val_pulsos.setText(Integer.toString(valvula.getPulsos()));
 

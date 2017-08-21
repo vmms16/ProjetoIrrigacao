@@ -13,13 +13,6 @@ public class Sessao {
     private static ArrayList<Valvula> arrayValvulas= new ArrayList<Valvula>();
 
     private Sessao(){
-        for(int i=0; i<7; i++){
-            Valvula v= new Valvula();
-            v.setVal("Valvula "+Integer.toString(i));
-            v.setTempo(0);
-            v.setPulsos(0);
-            arrayValvulas.add(v);
-        }
 
     }
 
@@ -44,6 +37,14 @@ public class Sessao {
         Sessao.arrayValvulas = arrayValvulas;
     }
 
-
+    public static void iniciarConfValvulas(){
+        for(int i=0; i<7; i++){
+            Valvula v= new Valvula();
+            v.setVal(i);
+            v.setTempo(0);
+            v.setPulsos(0);
+            arrayValvulas.add(v);
+        }
+    }
 
 }

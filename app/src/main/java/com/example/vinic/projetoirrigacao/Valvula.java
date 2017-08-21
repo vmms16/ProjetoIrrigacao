@@ -6,15 +6,15 @@ package com.example.vinic.projetoirrigacao;
 
 public class Valvula {
 
-    private String val;
+    private int val;
     private double tempo;
     private int pulsos;
 
-    public String getVal() {
+    public int getVal() {
         return val;
     }
 
-    public void setVal(String val) {
+    public void setVal(int val) {
         this.val = val;
     }
 
